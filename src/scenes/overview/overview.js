@@ -12,22 +12,22 @@ export default class Overview extends Component {
 		};
 	}
 	
-    
-    renderDevices = devices => {
-        const rendered = [];
+	
+	renderDevices = devices => {
+		const rendered = [];
 
-        this.props.devices.map(device => {
-            rendered.push(
+		this.props.devices.map(device => {
+			rendered.push(
 				<Lightbulb
 					aws={ this.props.aws }
 					iotdata={ this.props.iotdata }
 					device={ device }
 					mqttClient={ this.props.mqttClient }
 				/>
-            );
+			);
 		});
 
-        return rendered;
+		return rendered;
 	};
 
 
@@ -42,7 +42,7 @@ export default class Overview extends Component {
 				</div>
 				<div class={ style.row }>
 					<div class={ style.twelve + ' ' + style.columns }>
-                        { this.renderDevices(devices) }
+						{ this.renderDevices(devices) }
 					</div>
 				</div>
 			</div>

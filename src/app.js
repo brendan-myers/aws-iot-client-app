@@ -13,7 +13,7 @@ const config = require('./config');
 
 // To add to window
 if (!window.Promise) {
-  window.Promise = Promise;
+	window.Promise = Promise;
 }
 
 export default class App extends Component {
@@ -46,7 +46,7 @@ export default class App extends Component {
 			
 			var userData = {
 				Username : username,
-				Pool     : userPool
+				Pool	 : userPool
 			};
 
 			var authenticationData = {
@@ -126,7 +126,7 @@ export default class App extends Component {
 	/**
 	 * Retrieve devices from AWS
 	 */
-    fetchDevices = () => {
+	fetchDevices = () => {
 		new AWS.Iot().listThings({}, (err, data) => {
 			if (err) {
 				console.log(err, err.stack);
@@ -166,7 +166,7 @@ export default class App extends Component {
 			}).catch(ex => {
 				console.log(ex);
 			});
-        });
+		});
 	};
 	
 
@@ -175,8 +175,8 @@ export default class App extends Component {
 	 */
 	handleDeviceUpdate = (topic, message) => {
 		const thingName = topic.split('/')[2];
-		const type      = topic.split('/')[4];
-		const status    = topic.split('/')[5];
+		const type	  = topic.split('/')[4];
+		const status	= topic.split('/')[5];
 
 		if (type === 'update' && status === 'accepted') {
 			const payload = JSON.parse(message.toString());

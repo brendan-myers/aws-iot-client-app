@@ -26,11 +26,11 @@ export default class Login extends Component {
 		});
 
 		this.props.login(this.state.username, this.state.password).catch(ex => {
-            this.setState({
-                errors: 'Invalid username or password',
-                disabled: false
-            });
-        });
+			this.setState({
+				errors: 'Invalid username or password',
+				disabled: false
+			});
+		});
 	};
 
 
